@@ -1,25 +1,54 @@
-import logo from './logo.svg';
+import React, { Component } from "react";
 import './App.css';
+import ListItem from './ListItem';
+import BookTest from "./BookTest";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+constructor(props){
+  super(props);
+    this.state = {
+
+      books: [
+        {
+          id: 1,
+          name: "Take out trash",
+          description: "Trash removal from both bins",
+          completed: true
+        },
+        {
+          id: 2,
+          name: "Do the Dishes",
+          description: "Wash and dry the dishes",
+          completed: false
+        },
+        {
+          id: 3,
+          name: "Walk the Dog",
+          description: "Take dog around the block 2 times",
+          completed: true
+        }
+      ]
+    };
+  }
+
+  render () { 
+    const {books} = this.state;
+
+    return (
+      <div className="App">
+        <h1>Books</h1>
+        <BookTest/>
+        <ul>
+          <li>{books.map(book => ( //"(object).map" loops through each element in the object array
+                <BookTest name = {book.name}/>
+            ))}
+          </li>
+        </ul>
+      </div>
+    );
+  }
 }
 
 export default App;
