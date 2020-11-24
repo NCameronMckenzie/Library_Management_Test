@@ -10,7 +10,7 @@ const styles = {
         height: "220px",
         backgroundColor: "rgba(202,42,42,1)",
         flexDirection: "column",
-        margin:"10px",
+        margin: "10px",
         display: "flex"
     },
 
