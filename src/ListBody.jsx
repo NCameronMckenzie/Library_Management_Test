@@ -2,6 +2,10 @@ import React from "react";
 
 const styles = {
 
+    horizontal: {
+      display:"inline"
+    },
+
     wrapper: {
       display: "flex",
       flexDirection: "row",
@@ -18,9 +22,14 @@ const styles = {
 };
 
 const ListBody = ({name, description}) => (
-    <div style={styles.wrapper}>
-        <span style={styles.name}>{name}</span>
-    </div>
+  <ul>
+    <li>
+      <div style={styles.wrapper}>
+          <span style={styles.name}>{name}</span>
+      </div>
+    </li>
+  </ul>
+    
 );
 
 export default ListBody;

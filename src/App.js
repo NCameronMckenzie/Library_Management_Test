@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import './App.css';
-import ListItem from './ListItem';
 import BookTest from "./BookTest";
 
 
 class App extends Component {
-
+  
 constructor(props){
   super(props);
     this.state = {
@@ -39,13 +38,13 @@ constructor(props){
     return (
       <div className="App">
         <h1>Books</h1>
-        <BookTest/>
-        <ul>
-          <li>{books.map(book => ( //"(object).map" loops through each element in the object array
-                <BookTest name = {book.name}/>
-            ))}
-          </li>
-        </ul>
+        <div>
+          {books.map(book => ( //"(object).map" loops through each element in the object array
+              <BookTest 
+                name = {book.name}
+              />
+          ))}
+        </div>
       </div>
     );
   }

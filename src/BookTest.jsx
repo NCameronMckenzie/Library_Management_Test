@@ -1,30 +1,25 @@
 import React, { PureComponent } from "react";
-import ListBody from './ListBody';
-
-/*
-function Index(props) {
-  return (
-    <Container>
-      <BookTitle>&quot;Book Title&quot;</BookTitle>
-      <Rect></Rect>
-    </Container>
-  );
-}
-*/
 const styles = {
-    Container: {
-        display: "flex",
-        width: "71px",
-        height: "10px",
+
+    Rows: {
+        display: "inline-block"
+    },
+
+    Rect2: {
+        width: "126px",
+        height: "220px",
+        backgroundColor: "rgba(202,42,42,1)",
         flexDirection: "column",
-        backgroundColor: "#366156"
+        margin:"10px",
+        display: "flex"
     },
 
     BookTitle: {
         fontFamily: "Roboto",
         fontStyle: "normal",
         fontWeight: "400",
-        color: "#121212"
+        color: "#121212",
+        margin: "auto"
     },
 
     Rect: {
@@ -34,8 +29,8 @@ const styles = {
         borderWidth: "0px",
         borderColor: "#000000",
         borderRadius: "11px",
-        marginTop: "-220px",
-        marginLeft: "-28px",
+        marginTop: "0px",
+        marginLeft: "0px",
         borderStyle: "solid",
         boxShadow: "5px 5px 4px  0.2px rgba(0,0,0,.3)"
     }
@@ -44,15 +39,14 @@ const styles = {
 
 export default class BookTest extends PureComponent {
     render(){
-        return(
-            <container style = {styles.Container}>
-                <bookTitle style = {styles.BookTitle}>
-                    <ListBody
-                        name = {this.props.name}
-                    ></ListBody>
-                </bookTitle>
-            <rect style = {styles.Rect}></rect>
-            </container>
+        return (
+            <div style = {styles.Rows}>
+                <div style = {styles.Rect2}>
+                    <div style = {styles.Rect}></div>
+                    <div style = {styles.BookTitle}>&quot;Book Title&quot;</div>
+                </div>
+            </div>
+            
         );
     }
 }
